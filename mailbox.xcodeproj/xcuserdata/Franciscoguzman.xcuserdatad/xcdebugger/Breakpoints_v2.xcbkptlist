@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mailbox/MailboxViewController.swift"
-            timestampString = "454220832.744291"
+            timestampString = "454223601.93236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "onMessageSwipe(_:)"
             landmarkType = "5">
             <Locations>

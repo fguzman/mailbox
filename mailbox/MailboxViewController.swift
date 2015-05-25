@@ -20,6 +20,10 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var listView: UIImageView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var composeView: UIImageView!
+    @IBOutlet weak var keyboardView: UIImageView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var messageOriginalCenter: CGPoint!
     var messageBack: CGPoint!
@@ -49,6 +53,21 @@ class MailboxViewController: UIViewController {
         var edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
         edgeGesture.edges = UIRectEdge.Left
         contentView.addGestureRecognizer(edgeGesture)
+        
+    }
+    
+    @IBAction func onComposePress(sender: AnyObject) {
+    
+        overlayView.hidden=false
+        composeView.hidden=false
+        keyboardView.hidden=false
+        overlayView.alpha = 0.7
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.keyboardView.frame.origin.y = 384
+            self.composeView.frame.origin.y = 20
+            self.cancelButton.frame.origin.y = 25
+        })
         
     }
     
@@ -90,13 +109,25 @@ class MailboxViewController: UIViewController {
                     self.contentView.frame.origin.x = 285
                 })
             }
-            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    @IBAction func onCancelPress(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.keyboardView.frame.origin.y = 568
+            self.composeView.frame.origin.y = 568
+            self.cancelButton.frame.origin.y = 568
+        })
+        
+        delay(0.3, { () -> () in
+            self.overlayView.hidden=true
+        })
     }
     
     @IBAction func onListPress(sender: UITapGestureRecognizer) {
