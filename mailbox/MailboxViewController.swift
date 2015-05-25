@@ -18,6 +18,8 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var listIconView: UIImageView!
     @IBOutlet weak var rescheduleView: UIImageView!
     @IBOutlet weak var listView: UIImageView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var menuButton: UIButton!
     
     var messageOriginalCenter: CGPoint!
     var messageBack: CGPoint!
@@ -44,6 +46,52 @@ class MailboxViewController: UIViewController {
         
         messageOffScreen = CGPoint(x: messageBack.x+320, y: messageBack.y)
         
+        var edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
+        edgeGesture.edges = UIRectEdge.Left
+        contentView.addGestureRecognizer(edgeGesture)
+        
+    }
+    
+    @IBAction func onMenuPress(sender: AnyObject) {
+        
+        if contentView.frame.origin.x == 0 {
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.contentView.frame.origin.x = 285
+            })
+            
+        } else {
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.contentView.frame.origin.x = 0
+            })
+        }
+    }
+    
+    
+    func onEdgePan (sender: UIScreenEdgePanGestureRecognizer) {
+        
+        var point = sender.locationInView(view)
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            contentView.frame.origin.x = point.x
+            println(point)
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            if point.x < 100 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.contentView.frame.origin.x = 0
+                })
+                
+            } else {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.contentView.frame.origin.x = 285
+                })
+            }
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -172,7 +220,7 @@ class MailboxViewController: UIViewController {
                 }
                 
             } else {
-               
+                
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.messageView.center = self.messageBack
                 })
