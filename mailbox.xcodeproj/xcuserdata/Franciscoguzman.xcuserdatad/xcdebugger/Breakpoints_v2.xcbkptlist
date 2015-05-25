@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mailbox/MailboxViewController.swift"
+            timestampString = "454112219.502273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "onMessageSwipe(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mailbox.MailboxViewController.onMessageSwipe (mailbox.MailboxViewController)(ObjectiveC.UIPanGestureRecognizer) -&gt; ()"
+                  moduleName = "mailbox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Fanciscoguzman/Documents/Codepath/Week%203/Homework/mailbox/mailbox/MailboxViewController.swift"
+                  timestampString = "454105971.724772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "8531">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mailbox.MailboxViewController.(onMessageSwipe (mailbox.MailboxViewController) -&gt; (ObjectiveC.UIPanGestureRecognizer) -&gt; ()).(closure #1)"
+                  moduleName = "mailbox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Fanciscoguzman/Documents/Codepath/Week%203/Homework/mailbox/mailbox/MailboxViewController.swift"
+                  timestampString = "454105971.725979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "377">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
