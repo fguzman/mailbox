@@ -72,6 +72,23 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sideMenuNavIcon" id="ByM-5J-zLe">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="OgF-wm-UVT">
+                                        <rect key="frame" x="84" y="27" width="155" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="" image="later_nav_icon"/>
+                                            <segment title="" image="mail_nav_icon"/>
+                                            <segment title="" image="archive_nav_icon"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.40392156862745099" green="0.70196078431372544" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onChangeControl:" destination="vXZ-lx-hvc" eventType="valueChanged" id="kRD-XD-NTs"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m8J-qO-3Z6">
                                         <rect key="frame" x="0.0" y="20" width="52" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,6 +152,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="emailbody" id="65v-3v-I3n">
+                                <rect key="frame" x="-320" y="143" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -147,7 +168,9 @@
                         <outlet property="composeView" destination="p0G-t9-aB9" id="tpu-Hc-kir"/>
                         <outlet property="contentView" destination="H6l-G1-nq4" id="PWe-us-dJ4"/>
                         <outlet property="deleteIconView" destination="yiU-R1-RNo" id="ml1-JH-xGE"/>
+                        <outlet property="emailBody" destination="65v-3v-I3n" id="ZDc-dt-lXj"/>
                         <outlet property="feedView" destination="WQ0-aL-tif" id="mYt-jl-EVt"/>
+                        <outlet property="hamburgerView" destination="ByM-5J-zLe" id="4yJ-M2-y61"/>
                         <outlet property="keyboardView" destination="RId-MY-kCE" id="yfz-rP-NAq"/>
                         <outlet property="laterIconView" destination="fX7-Ls-Cdi" id="9SO-3M-h33"/>
                         <outlet property="listIconView" destination="H8c-wH-JDQ" id="GL2-jC-qd8"/>
@@ -155,6 +178,7 @@
                         <outlet property="mailScrollView" destination="p5u-Y2-8VU" id="P0n-zC-6JM"/>
                         <outlet property="menuButton" destination="m8J-qO-3Z6" id="lgX-9q-peb"/>
                         <outlet property="messageView" destination="esR-db-Rqg" id="Dd5-C3-ZBR"/>
+                        <outlet property="navSegmentedControl" destination="OgF-wm-UVT" id="j9M-Wr-qmk"/>
                         <outlet property="overlayView" destination="clX-JU-X9G" id="J44-mP-etu"/>
                         <outlet property="rescheduleView" destination="HYW-1S-BCo" id="OVw-ye-gZt"/>
                     </connections>
@@ -181,19 +205,24 @@
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
+        <image name="archive_nav_icon" width="25" height="20"/>
         <image name="compose window" width="320" height="225"/>
         <image name="delete_icon" width="25" height="25"/>
+        <image name="emailbody" width="320" height="460"/>
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="keyboard" width="320" height="184"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="later_nav_icon" width="25" height="20"/>
         <image name="list" width="320" height="568"/>
         <image name="list_icon" width="25" height="25"/>
+        <image name="mail_nav_icon" width="25" height="20"/>
         <image name="menu" width="320" height="568"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
         <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
+        <image name="sideMenuNavIcon" width="60" height="65"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -24,6 +24,10 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var composeView: UIImageView!
     @IBOutlet weak var keyboardView: UIImageView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var navSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var hamburgerView: UIImageView!
+    @IBOutlet weak var emailBody: UIImageView!
+    
     
     var messageOriginalCenter: CGPoint!
     var messageBack: CGPoint!
@@ -54,6 +58,40 @@ class MailboxViewController: UIViewController {
         edgeGesture.edges = UIRectEdge.Left
         contentView.addGestureRecognizer(edgeGesture)
         
+        //navSegmentedControl.
+        
+    }
+    
+    
+    @IBAction func onChangeControl(sender: UISegmentedControl) {
+        
+        if navSegmentedControl.selectedSegmentIndex == 0 {
+            
+            //println("segment 0")
+            
+            navSegmentedControl.tintColor = yellowColor
+            hamburgerView.tintColor = yellowColor
+            
+//            UIView.animateWithDuration(0.3, animations: { () -> Void in
+//                self.contentView.frame.origin.x = 320
+//                self.emailBody.frame.origin.x = 0
+//            })
+            
+            
+            
+        } else if navSegmentedControl.selectedSegmentIndex == 1 {
+
+            //println("segment 1")
+            
+            navSegmentedControl.tintColor = blueColor
+            
+        } else if navSegmentedControl.selectedSegmentIndex == 2 {
+            
+            //println("segment 2")
+            
+            navSegmentedControl.tintColor = greenColor
+            
+        }
     }
     
     @IBAction func onComposePress(sender: AnyObject) {
